@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tilt Envelope</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    Happy 20th Monthsary My love!
+  </header>
+
+  <main>
+    <div class="envelope-container">
+      <div class="envelope" id="envelope" onclick="toggleEnvelope()">
+        <div class="flap"></div>
+        <div class="heart-stamp">❤</div>
+
+        <div class="letter" id="letter">
+          <div class="letter-content">
+            <p class="reveal">
+              I can’t believe another month has passed already. No long message can ever truly express how much I love you, but I want you to know how grateful I am to have you. I’m so thankful to have you.
+            </p>
+
+            <p class="reveal">
+              Thank you for reminding me how valuable I am. Thank you for treating me gently and sincerely, and thank you for understanding my flaws. Thank you for making those feelings that show how deeply I am loved and cared for.
+            </p>
+
+            <p class="reveal">
+              Thank you for being my best friend and girlfriend. Thank you for spending time with me, thank you for loving and trusting me, and thank you for being there for me when I’m tired. You’re perfect just the way you are.
+            </p>
+
+            <p class="reveal">
+              No matter what happens, I will always love you. I will never get tired of loving you, even during your busiest days. I promise to be there for you no matter what happens. We will stay together, through sadness and laughter.
+            </p>
+
+            <p class="reveal">
+              I wish for both of us to have a happy and strong relationship — to grow together and face everything hand in hand. May God continue to guide us and enlighten our relationship, making our love stronger every day.
+            </p>
+
+            <p class="reveal">
+              I hope to have more months and years with youuu. I love you so much!
+            </p>
+
+            <p class="reveal" style="margin-top: 12px; font-weight: 600;">— Your Baby </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hint">wag ka sana kiligin, ako na to e (dont judge the grammar)</div>
+    </div>
+  </main>
+
+  <script>
+    function toggleEnvelope() {
+      document.getElementById('envelope').classList.toggle('open');
+    }
+
+    // Reveal text on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
